@@ -1,0 +1,43 @@
+.ListingCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.slider{
+}
+
+.favorite {
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.location {
+  margin-top: 10px;
+
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.category {
+  font-weight: 300;
+}
+
+.price {
+  font-weight: 600;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.word {
+  font-weight: 300;
+}

@@ -1,0 +1,90 @@
+@use "sass:math";
+@import url("../../../../shared/styles/mixins.scss");
+
+.wrapper {
+	position: relative;
+}
+
+.UserMenu {
+	display: flex;
+	flex-direction: row;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.text {
+	cursor: pointer;
+
+	display: none;
+
+	padding: 0.75rem 1rem;
+
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1.25rem;
+
+	border-radius: 9999px;
+
+	transition: all 0.3s ease 0s;
+
+	@media (width >= 768px) {
+		display: block;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--text-hover);
+		}
+	}
+}
+
+.menu {
+	cursor: pointer;
+
+	display: flex;
+	flex-direction: row;
+	gap: 0.75rem;
+	align-items: center;
+
+	padding: 0.25rem 0.5rem;
+
+	border: 1px solid var(--input-border-color);
+	border-radius: 100px;
+
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+		}
+	}
+}
+
+.popup {
+	cursor: pointer;
+
+	position: absolute;
+	z-index: var(--z-index-popup);
+	top: 3.5rem;
+	right: 0;
+
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+
+	background-color: var(--bg-color);
+	border: 1px solid var(--input-border-color);
+	border-radius: 0.75rem;
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+
+	@media (width >= 768px) {
+		width: 75%;
+	}
+}

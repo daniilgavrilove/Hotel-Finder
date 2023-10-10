@@ -1,0 +1,79 @@
+@use "sass:math";
+
+.PhotoGalleryWrapper{
+
+
+}
+
+.wrapper {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  transition: all 0.3s ease 0s;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+
+  background-color: var(--bg-color);
+  outline-style: none;
+
+
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  opacity: 0;
+  transform: translate(0,100%);
+}
+
+.galleryHeader{
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: sticky;
+  height: 60px;
+  z-index: 100;
+  background-color: var(--bg-color);
+}
+
+.arrowButton {
+  top: 1rem;
+  left: 1rem;
+}
+
+.photoGallery{
+
+  gap: 1rem;
+  width: 100%;
+  margin: 40px auto;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.showGallery{
+  opacity: 1;
+  transform: translate(0,0);
+
+}
+
+.image {
+  overflow: hidden;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+  &:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+}

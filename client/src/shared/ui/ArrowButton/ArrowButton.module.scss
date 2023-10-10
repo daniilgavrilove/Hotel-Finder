@@ -1,0 +1,37 @@
+@use "sass:math";
+
+
+.ArrowButton{
+  position: relative;
+  z-index: 6;
+  pointer-events: all;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  color: #0C1214;
+
+  background-color: var(--bg-color);
+
+  transition: all 0.3s ease 0s;
+
+  @media (any-hover: hover){
+    &:hover{
+      box-shadow: rgb(0 0 0 / 10%) 0 4px 12px;
+      background-color: var(--text-hover);
+
+    }
+  }
+
+}
+
+.toLeft{
+  transform: rotate(-180deg);
+}

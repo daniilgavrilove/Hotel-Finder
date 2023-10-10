@@ -1,0 +1,39 @@
+@use "sass:math";
+@import url("../../../shared/styles/mixins.scss");
+
+.Button {
+	position: relative;
+
+	width: 100%;
+	padding: 0.5rem 0.75rem;
+
+	color: var(--text-introverse);
+
+	background-color: var(--bg-icons-color);
+	border-color: var(--bg-icons-color);
+	border-radius: 0.5rem;
+
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:disabled {
+		cursor: auto;
+		opacity: 0.5;
+	}
+}
+
+.outline {
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	border: 2px solid var(--text-color);
+}
+
+.icon {
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	transform: translate(0, -50%);
+}

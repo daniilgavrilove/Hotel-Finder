@@ -1,0 +1,14 @@
+@use "sass:math";
+@import url("../../../../shared/styles/mixins.scss");
+
+.MenuItem {
+	padding: 0.75rem 1rem;
+	font-weight: 600;
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--text-hover);
+		}
+	}
+}

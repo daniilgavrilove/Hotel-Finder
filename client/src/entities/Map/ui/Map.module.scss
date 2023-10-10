@@ -1,0 +1,7 @@
+@use "sass:math";
+@import url("../../../shared/styles/mixins.scss");
+
+.Map {
+	height: 35vh;
+	border-radius: 0.5rem;
+}

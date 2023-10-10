@@ -1,0 +1,73 @@
+@use "sass:math";
+@import url("../../../shared/styles/mixins.scss");
+
+.InputWrapper {
+	position: relative;
+	width: 100%;
+}
+
+.label {
+	position: absolute;
+	z-index: 10;
+	top: 1.25rem;
+	left: 1rem;
+	transform-origin: 0;
+	transform: translate(0, -0.75rem);
+
+	color: var(--label-color);
+
+	transition: all 0.15s ease 0s;
+
+	.formatPrice & {
+		left: 2.25rem;
+	}
+
+	.error & {
+		color: var(--bg-icons-color);
+	}
+}
+
+.input {
+	width: 100%;
+	padding: 1.5rem 1rem 1rem;
+
+	font-weight: 300;
+
+	background-color: var(--bg-color);
+	border: 2px solid var(--input-border-color);
+	border-radius: 0.375rem;
+	outline-style: none;
+
+	transition: all 0.3s ease 0s;
+
+	&:focus {
+		border-color: var(--text-color);
+	}
+
+	&:placeholder-shown + .label {
+		transform: scale(1) translate(0, 0);
+	}
+
+	&:focus + .label {
+		transform: scale(0.75) translate(0, -1rem);
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.7;
+	}
+
+	.formatPrice & {
+		padding-left: 2.25rem;
+	}
+
+	.error & {
+		border-color: var(--bg-icons-color);
+	}
+}
+
+.price {
+	position: absolute;
+	top: 1.25rem;
+	left: 0.5rem;
+}

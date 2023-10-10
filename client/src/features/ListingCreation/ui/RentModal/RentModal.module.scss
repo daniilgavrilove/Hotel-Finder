@@ -1,0 +1,21 @@
+@use "sass:math";
+@import url("../../../../shared/styles/mixins.scss");
+
+.body {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.categories {
+	overflow-y: auto;
+	display: grid;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	gap: 0.75rem;
+
+	max-height: 50vh;
+
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}

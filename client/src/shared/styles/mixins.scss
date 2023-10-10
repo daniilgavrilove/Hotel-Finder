@@ -1,0 +1,85 @@
+/*
+@use "sass:math";
+
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1890;
+$containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Percent
+@function percent($px, $from) {
+	$result: math.div($px, $from) * 100%;
+
+	@return $result;
+}
+
+// REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+
+	@return $result;
+}
+
+// EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+
+	@return $result;
+}
+
+// Currency
+@mixin currency($sym) {
+	&::after {
+		content: "#{$sym}";
+	}
+}
+
+// Grids
+@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+	display: grid;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+	gap: $gap;
+}
+
+// Адаптивное свойство
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+	@if $widthFrom == $containerWidth and $maxWidthContainer == 0 {
+		$widthFrom: $maxWidth;
+	}
+
+	// Брейк-поинты в EM
+	$widthFromMedia: em($widthFrom);
+	$widthToMedia: em($widthTo);
+
+	// Формула плавающего значения
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+
+	@if $widthFrom == $containerWidth or $widthFrom == $maxWidth or $keepSize == 1 or $keepSize == 2 {
+		@media (min-width: $widthFromMedia) {
+			#{$property}: rem($startSize);
+		}
+	}
+
+	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+		#{$property}: $propertyValue;
+	}
+
+	@if $widthTo == $minWidth or $keepSize == 1 or $keepSize == 3 {
+		@media (max-width: $widthToMedia) {
+			#{$property}: rem($minSize);
+		}
+	}
+}
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$tabletMenu: em(889.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98);
+*/

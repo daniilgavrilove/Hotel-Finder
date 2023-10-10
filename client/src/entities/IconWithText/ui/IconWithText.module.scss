@@ -1,0 +1,27 @@
+@use "sass:math";
+
+.IconWithText {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.icon {
+  flex: 0 1 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+}
+.mainText {
+  font-weight: 600;
+}
+.secondaryText{
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}

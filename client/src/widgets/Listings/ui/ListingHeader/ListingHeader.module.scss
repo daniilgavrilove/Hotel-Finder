@@ -1,0 +1,60 @@
+@use "sass:math";
+.ListingHeader {
+  padding-top: 8rem;
+}
+
+.headerTop{
+  display: flex;
+  justify-content: space-between;
+}
+
+.images {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  gap: 10px;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  @media (max-width: 740px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+.showAlPhotos{
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
+}
+.image {
+  cursor: pointer;
+  overflow: hidden;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease 0s;
+    	@media (any-hover: hover){
+    			&:hover{
+    			filter: brightness(90%);
+    			}
+    		}
+  }
+  &:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}

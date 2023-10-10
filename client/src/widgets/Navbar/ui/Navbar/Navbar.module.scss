@@ -1,0 +1,26 @@
+.Navbar {
+	position: fixed;
+	z-index: var(--z-index-header);
+	width: 100%;
+}
+
+.navbarHeader {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	background-color: var(--bg-color);
+	border-bottom: 1px solid var(--input-border-color);
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	gap: 0.75rem;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (width >= 768px) {
+		gap: 0;
+	}
+}

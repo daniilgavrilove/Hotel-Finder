@@ -1,0 +1,56 @@
+@use "sass:math";
+@import url("../../../shared/styles/mixins.scss");
+
+.Counter {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	font-weight: 500;
+}
+
+.subtitle {
+	font-weight: 300;
+	color: var(--text-secondary-color);
+}
+
+.counterActions {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	align-items: center;
+}
+
+.counterAction {
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 2.5rem;
+	height: 2.5rem;
+
+	border: 1px solid var(--input-border-color);
+	border-radius: 50%;
+
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		border-color: var(--text-color);
+	}
+}
+
+.counterValue {
+	font-size: 1.25rem;
+	font-weight: 300;
+	line-height: 1.75rem;
+}

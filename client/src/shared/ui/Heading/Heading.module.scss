@@ -1,0 +1,22 @@
+@use "sass:math";
+@import url("../../../shared/styles/mixins.scss");
+
+.Heading {
+	text-align: left;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 2rem;
+}
+
+.subTitle {
+	margin-top: 0.5rem;
+	font-weight: 300;
+	opacity: 0.9;
+}

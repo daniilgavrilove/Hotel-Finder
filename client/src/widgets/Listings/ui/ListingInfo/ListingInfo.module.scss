@@ -1,0 +1,52 @@
+@use "sass:math";
+
+.ListingInfo {
+  margin-top: 2rem;
+}
+
+.location {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.counts{
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+
+  span {
+    position: relative;
+    &:not(:last-child){
+
+    &:after {
+      content:'';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      top: 50%;
+      right: -15%;
+      background-color: var(--text-color);
+
+    }
+    }
+  }
+}
+
+.owner,
+.details,
+.description{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ownerInfo{
+  display: flex;
+  flex-direction: column;
+}
+.ownerName {
+  font-weight: 600;
+}
+.hosting{
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}

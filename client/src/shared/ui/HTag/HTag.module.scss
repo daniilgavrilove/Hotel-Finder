@@ -1,0 +1,19 @@
+@use "sass:math";
+@import url("../../../shared/styles/mixins.scss");
+
+.title_h1 {
+	display: block;
+	font-weight: 300;
+	opacity: 0.85;
+}
+
+.title_h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 2rem;
+}
+
+.title_h3 {
+	margin-top: 0.5rem;
+	font-weight: 300;
+}

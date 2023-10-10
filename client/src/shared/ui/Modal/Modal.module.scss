@@ -1,0 +1,140 @@
+@use "sass:math";
+@import url("../../../shared/styles/mixins.scss");
+
+.ModalWrapper {
+	position: fixed;
+	z-index: 50;
+	inset: 0;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: rgb(229 229 229 / 50%);
+	outline-style: none;
+	
+
+	&:focus {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+	}
+}
+
+.Modal {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+
+	@media (width >= 768px) {
+		width: 66.6%;
+		height: auto;
+	}
+
+	@media (width >= 1024px) {
+		width: 50%;
+		height: auto;
+	}
+
+	@media (width >= 1280px) {
+		width: 40%;
+	}
+}
+
+.content {
+	position: relative;
+	transform: translate(0, 100%);
+
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	height: 100%;
+
+	opacity: 0;
+	background-color: #FFF;
+
+	//border: 1px solid var(--input-border-color);
+
+	border-radius: 0.5rem;
+	outline-style: none;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+
+	transition: all 0.3s ease 0s;
+
+	@media (width >= 768px) {
+		height: auto;
+	}
+
+	@media (width >= 1024px) {
+		height: auto;
+	}
+}
+
+.showModal {
+	transform: translate(0, 0);
+	opacity: 1;
+}
+
+.header {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 1rem;
+
+	border-bottom: 1px solid var(--input-border-color);
+
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 2.25rem;
+	padding: 0.25rem;
+	cursor: pointer;
+	//border: 1px solid var(--input-border-color);
+
+	transition: all 0.3s ease 0s;
+
+	:hover {
+		opacity: 0.7;
+	}
+}
+
+.title {
+	font-size: 1.125rem;
+	font-weight: 600;
+	line-height: 1.75rem;
+}
+
+.body {
+	position: relative;
+	flex: 1 1 auto;
+	padding: 1.5rem;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1.5rem;
+}
+
+.footerContent {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	align-items: center;
+
+	width: 100%;
+}

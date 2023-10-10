@@ -1,0 +1,34 @@
+@import url("./null.scss");
+@import url("./mixins.scss");
+@import url("./globals.scss");
+@import url("./themes/normal.scss");
+@import url("./themes/dark.scss");
+
+html {
+
+}
+
+body {
+
+	//overflow-y: auto;
+	//scrollbar-gutter: stable;
+
+	// Скролл заблокирован
+	.lock & {
+		touch-action: none;
+		overflow: hidden;
+	}
+}
+
+.app {
+	display: flex;
+
+	min-height: 100vh;
+
+	//font: var(--font-m);
+	font-family: Nunito, sans-serif;
+	font-weight: 400;
+	color: var(--text-color);
+
+	background: var(--bg-color);
+}

@@ -1,0 +1,8 @@
+.Logo {
+	cursor: pointer;
+	display: none;
+
+	@media (width >= 768px) {
+		display: block;
+	}
+}

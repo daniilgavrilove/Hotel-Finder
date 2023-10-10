@@ -1,0 +1,36 @@
+@use "sass:math";
+@import url("../../../../shared/styles/mixins.scss");
+
+.RegisterModal{
+
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.bottomText {
+	margin-top: 1rem;
+	font-weight: 300;
+	color: var(--text-secondary-color);
+	text-align: center;
+
+	span {
+		cursor: pointer;
+		font-weight: 500;
+		color: var(--deep-text-color);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

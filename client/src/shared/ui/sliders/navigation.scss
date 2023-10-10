@@ -1,0 +1,73 @@
+.paginationNavigationSlider {
+  	@media (any-hover: hover){
+  			&:hover{
+  			.arrows{
+              opacity: 0.8;
+              visibility: visible;
+            }
+  			}
+  		}
+}
+.arrows{
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 20px;
+  transform: translate(0,-50%);
+
+  display: flex;
+  justify-content: space-between;
+
+  width: calc(100% - 40px);
+
+  transition: all 0.3s ease 0s;
+
+  @media (max-width:767.98px){
+    display: none;
+  }
+}
+
+.arrow{
+  position: relative;
+  z-index: 6;
+  pointer-events: all;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  color: #0C1214;
+
+  background-color: var(--bg-color);
+
+  transition: all 0.3s ease 0s;
+
+  @media (any-hover: hover){
+    &:hover{
+      box-shadow: rgb(0 0 0 / 10%) 0 4px 12px;
+
+
+    }
+  }
+
+}
+
+.prev{
+  transform: rotate(-180deg);
+}
+.isBeginning,
+.isEnd{
+  opacity: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,14 @@
+
+.EmptyState {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.button {
+  margin-top: 1rem;
+  width: 12rem;
+}
